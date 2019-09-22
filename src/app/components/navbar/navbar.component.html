@@ -1,0 +1,8 @@
+<nav class="navbar navbar-dark navbar-footer-background-color sticky-top">
+  <a class="navbar-brand" href="">Henri Potier</a>
+  <button type="button" class="btn basket-button" [routerLink]="['/basket']">
+    <i class="fa fa-shopping-bag" aria-hidden="true">
+      <span class="badge badge-light">{{ bookInTheBasket.length || 0 }}</span>
+    </i>
+  </button>
+</nav>

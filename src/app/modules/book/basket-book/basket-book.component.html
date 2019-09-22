@@ -1,0 +1,49 @@
+<div class="row" [ngClass]="isHugeScreen ? ' margin-left-100 margin-right-100' : 'margin-left-9'">
+  <div class="col-sm-12 mb-3 col-lg-4" *ngFor="let book of bookInTheBasket || []">
+    <app-card-book (deleteBook)="deleteBook()" [is_basket]="true" [book]="book"></app-card-book>
+  </div>
+</div>
+
+<div class="container" *ngIf="!!bookInTheBasket.length && bookInTheBasket.length !== 0">
+  <hr />
+  <div class="row">
+    <div class="col align-self-end">
+      <div class="totals-item">
+        <label class="label-total">Total price:</label>
+        <div class="totals-value">{{ price | currency: '€' }}</div>
+      </div>
+      <div class="totals-item">
+        <label class="label-total">Reducation:</label>
+        <div class="totals-value">{{ price - reducedPrice | currency: '€' }}</div>
+      </div>
+      <div class="totals-item">
+        <label class="label-total font-weight-bold">Total price with reduction:</label>
+        <div class="totals-value font-weight-bold">{{ reducedPrice | currency: '€' }}</div>
+      </div>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col align-self-center text-right">
+      <button
+        data-toggle="modal"
+        data-target="#exampleModalLong"
+        type="button"
+        class="buy-button btn backgroud-primary text-color-primary "
+      >
+        <i class="fa fa-shopping-bag" aria-hidden="true">
+          <span class="badge badge-light"></span>
+        </i>
+        Buy
+      </button>
+    </div>
+  </div>
+  <br /><br />
+</div>
+<div *ngIf="!bookInTheBasket.length && bookInTheBasket.length === 0" class="text-center">
+  <br />
+  <p class="text-color-classique">
+    <strong>You don't have any items in your basket. To get one please visit the whole Harry Potier</strong>
+  </p>
+  <p><a href="/" class="back">Here</a></p>
+</div>

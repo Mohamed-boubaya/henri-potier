@@ -1,0 +1,32 @@
+<div *ngIf="!serverError">
+  <div class="card margin-left-100 margin-right-100">
+    <div class="card-body">
+      <div class="row mt-2 mb-4">
+        <div class="col">
+          <h3>Filter by:</h3>
+          <div class="form-row">
+            <div class="col-sm-12 col-md-3 mb-1 mb-sm-0">
+              <input [(ngModel)]="filterName" class="form-control" type="text" placeholder="name of book" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+  <div class="margin-left-100 margin-right-100 text-center" *ngIf="filterName">
+    <p>{{ (listOfBook | bookName: filterName).length }} book(s) founded for "{{ filterName }}"</p>
+  </div>
+  <br />
+  <div class="row" [ngClass]="isHugeScreen ? ' margin-left-100 margin-right-100' : 'margin-left-9'">
+    <div class="col-sm-12 mb-3 col-lg-4" *ngFor="let book of listOfBook | bookName: filterName">
+      <app-card-book [is_basket]="false" [book]="book"></app-card-book>
+    </div>
+  </div>
+</div>
+<div *ngIf="serverError" class="text-center">
+  <br />
+  <p class="text-color-classique">
+    <strong>Sorry something went wrong please try again later.</strong>
+  </p>
+</div>

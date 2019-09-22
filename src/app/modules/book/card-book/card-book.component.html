@@ -1,0 +1,24 @@
+<div class="card" style="width: 20rem;">
+  <img class="card-img-top" [src]="blockInfo.cover" [alt]="blockInfo.title" />
+  <div class="card-body">
+    <h6 class="title text-dots">
+      <a class="text-center" href="" >{{ blockInfo.title | uppercase }}</a>
+    </h6>
+    <button
+      [disabled]="isIntheBasket && !isBasket"
+      (click)="basketManager()"
+      [ngClass]="isBasket ? 'backgroud-secondary' : 'backgroud-primary'"
+      class="btn btn-sm float-right text-color-primary"
+    >
+      <ng-container *ngIf="!isBasket; else deletefromCart">
+        Add to cart
+      </ng-container>
+      <ng-template #deletefromCart>
+        Delete from cart
+      </ng-template>
+    </button>
+    <div class="price-wrap h5">
+      <span class="price-new">{{ blockInfo.price | currency: '€' }} </span>
+    </div>
+  </div>
+</div>

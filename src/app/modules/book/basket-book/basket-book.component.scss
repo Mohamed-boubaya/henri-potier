@@ -1,0 +1,29 @@
+.label-total {
+  float: left;
+  clear: both;
+  width: 79%;
+  text-align: right;
+  color: rgba(0,0,0,0.55);
+  font-weight: 400;
+}
+.totals-value {
+  float: right;
+  width: 21%;
+  text-align: right;
+  color: rgba(0,0,0,0.55);
+  font-weight: 400;
+}
+
+.totals-item {
+  float: right;
+  clear: both;
+  width: 100%;
+  margin-bottom: 10px;
+}
+hr {
+  border-top: 1px solid #bdbdbd;
+  margin-right: 5.2rem;
+}
+.buy-button{
+  box-shadow: none;
+}

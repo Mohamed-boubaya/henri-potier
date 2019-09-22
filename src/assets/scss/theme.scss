@@ -1,0 +1,58 @@
+@import './theme-variable';
+
+.margin-left-100 {
+  margin-left: 100px !important;
+}
+.margin-right-100 {
+  margin-right: 100px !important;
+}
+.margin-right-15 {
+  margin-right: 15px !important;
+}
+.margin-left-9 {
+  margin-left: 9px !important;
+}
+
+.margin-left-15 {
+  margin-left: 15px !important;
+}
+.navbar-footer-background-color {
+  background-color: $navbar-footer !important;
+}
+.white-color-text {
+  color: white !important;
+}
+.backgroud-primary {
+  background-color: $primary !important;
+}
+.backgroud-secondary {
+  background-color: $secondary !important;
+}
+
+.text-color-primary {
+  color: $textcolor !important;
+}
+.text-color-classique {
+  color: $textclassic !important;
+}
+
+.back:hover {
+  background: #4c4c4c;
+  color: #fff;
+}
+
+.back {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  border-radius: 3px;
+}
+.back:visited {
+  color: #be2635;
+  outline: none;
+  text-decoration: none;
+}
